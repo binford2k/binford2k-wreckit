@@ -1,0 +1,27 @@
+# WreckIT: <%= @title %>
+
+<%= @description %>
+
+<% if @recovery -%>
+
+# Recovery Instructions
+-------------------------------------------------------------------
+<%= @recovery %>
+<% end -%>
+
+<% if @backup -%>
+
+# Wrecked files have been backed up
+-------------------------------------------------------------------
+<%= @backup %>
+<% end -%>
+
+<% if @urls -%>
+
+# Additional information
+-------------------------------------------------------------------
+<% @urls.each do |url| -%>
+* <%= url %>
+<% end -%>
+<% end -%>
+
