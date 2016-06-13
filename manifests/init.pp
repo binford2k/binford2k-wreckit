@@ -9,8 +9,8 @@ class wreckit (
   if $scenario {
     $enforced = $scenario
   } else {
-    $available = classes_from_namespace("wreckit::scenario::${context}")
-    $enforced  = slice($available, $count)[0]
+    $available = wreckit_scenarios($context)
+    $enforced  = slice(fqdn_shuffle($available), $count)[0]
   }
 
   File {
@@ -19,7 +19,9 @@ class wreckit (
     mode    => '0644',
   }
 
-  wreckit::wreck { $enforced: }
+  if size($enforced) > 0 {
+    wreckit::wreck { $enforced: }
+  }
 
   file { $logpath:
     ensure  => directory,
