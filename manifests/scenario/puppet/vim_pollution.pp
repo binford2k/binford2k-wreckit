@@ -7,7 +7,8 @@ class wreckit::scenario::puppet::vim_pollution {
   file_line { 'vim pollution':
     ensure => present,
     path   => '/etc/puppetlabs/puppet/puppet.conf',
-    line   => ':wq',
+    line   => 'pluginsync = true:wq',
+    match  => 'pluginsync',
   }
 
 }
