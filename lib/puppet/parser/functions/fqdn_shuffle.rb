@@ -1,5 +1,5 @@
 Puppet::Parser::Functions.newfunction(:fqdn_shuffle, :type => :rvalue) do |args|
-  raise(Puppet::ParseError, 'fqdn_shuffle: wrong number of args') unless args.size = 1
+  raise(Puppet::ParseError, 'fqdn_shuffle: wrong number of args') unless args.size == 1
   raise(Puppet::ParseError, 'fqdn_shuffle: requires an array') unless args.first.is_a?(Array)
 
   result = args.first.clone

@@ -1,6 +1,6 @@
 {
   "name": "binford2k-wreckit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "binford2k",
   "summary": "Most modules are designed to configure things. This one is designed to break them.",
   "license": "Apache-2.0",
